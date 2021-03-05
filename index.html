@@ -27,15 +27,16 @@
 			<br>
 			<h1 class="text-left">Calendar</h1>
 			<br>
+
 			<v-alert v-model="alert" border="left" close-text="Close Alert" color="orange" dark dismissible >
 				For more info, please refer to the <strong>ReadMe.txt</strong> at github repository root. Thank you.		
 			</v-alert>
+
 			<br>
 
 
-      <div class="" >
-        <div class="card">
-
+	<div class="" >
+		<div class="card">
 		<v-row>
 			
 			<v-col>
@@ -100,10 +101,16 @@
 				</div>
 			</v-row>
 
-			<br>
+			<br>	
 
-			<v-btn v-on:click="addEvent" depressed color="primary">Save</v-btn>
-			<v-btn v-on:click="resetFields" class="ma-2" outlined color="red">Reset Fields</v-btn>
+			
+			<v-progress-linear v-if="loading" indeterminate color="teal"></v-progress-linear>
+
+			<div v-if="!loading">
+				<v-btn v-on:click="addEvent" depressed color="primary">Save</v-btn>
+				<v-btn v-on:click="resetFields" class="ma-2" outlined color="red">Reset Fields</v-btn>	
+			</div>
+			
 			
 			<br><br>
 
@@ -155,6 +162,7 @@
 				</div>
 			</v-col>
 
+
 		</v-row>
 				
           </div>
@@ -189,6 +197,7 @@
 			saturday: false,
 			menu: false,
 			menu2: false,
+			loading: false,
 			// Form checking-related values
 			eventNameEmpty: false,
 			startDateEmpty: false,
@@ -252,6 +261,8 @@
 			// returns - 
 			addEvent: async function ()  {
 
+				this.loading = true;
+
 				if(!this.hasFormErrors()) {
 
 					var data = {
@@ -285,6 +296,9 @@
 						this.recentlyAddedEvent = null;
 						console.log(e);
 					}
+				
+				this.loading = false;
+
 				}
 			},
 			// receives -
@@ -309,6 +323,7 @@
 				this.endDateEmpty = false,
 				this.successfulSave = false,
 				this.serverError = false,
+				this.loading = false,
 				this.dateError= false,
 				this.recentlyAddedEvent = null
 			},
