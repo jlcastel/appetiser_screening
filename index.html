@@ -102,8 +102,12 @@
 
 			<br>
 
-			<v-btn v-on:click="addEvent" depressed color="primary">Save</v-btn>
-			<v-btn v-on:click="resetFields" class="ma-2" outlined color="red">Reset Fields</v-btn>
+			<v-progress-linear v-if="loading" indeterminate color="teal"></v-progress-linear>
+
+			<div v-if="!loading">
+				<v-btn v-on:click="addEvent" depressed color="primary">Save</v-btn>
+				<v-btn v-on:click="resetFields" class="ma-2" outlined color="red">Reset Fields</v-btn>	
+			</div>
 			
 			<br><br>
 
@@ -189,6 +193,7 @@
 			saturday: false,
 			menu: false,
 			menu2: false,
+			loading: false,
 			// Form checking-related values
 			eventNameEmpty: false,
 			startDateEmpty: false,
@@ -251,6 +256,8 @@
 			// used in -
 			// returns - 
 			addEvent: async function ()  {
+								
+				this.loading = true;
 
 				if(!this.hasFormErrors()) {
 
@@ -285,6 +292,10 @@
 						this.recentlyAddedEvent = null;
 						console.log(e);
 					}
+				
+				
+				this.loading = false;
+				
 				}
 			},
 			// receives -
