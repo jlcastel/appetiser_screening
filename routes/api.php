@@ -24,3 +24,4 @@ use App\Http\Controllers\EventController;
 // Route::get(){}
 
 Route::post('event/add', [EventController::class, 'store']);
+Route::get('events/', [EventController::class, 'getAllEvents']);
