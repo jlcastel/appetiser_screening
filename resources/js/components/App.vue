@@ -158,7 +158,7 @@
 						
 						this.loading = true;
 
-						$requestResponse = await axios({
+						await axios({
 							method: 'post',
 							baseURL: `https://phplaravel-559756-1801932.cloudwaysapps.com/`,
 							// baseURL: `http://localhost:8000`,
