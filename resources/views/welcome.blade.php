@@ -18,6 +18,7 @@
   <body>
 
 	<div id="app">
+		wqerqwerewreqwre
 		<App/>
 	</div>
 
