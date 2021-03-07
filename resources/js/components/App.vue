@@ -160,7 +160,7 @@
 
 						$requestResponse = await axios({
 							method: 'post',
-							baseURL: `https://ancient-plateau-26754.herokuapp.com/`,
+							baseURL: `https://phplaravel-559756-1801932.cloudwaysapps.com/`,
 							// baseURL: `http://localhost:8000`,
 							url: `/api/event/add`,
 							data: data,
