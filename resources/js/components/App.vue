@@ -11,7 +11,7 @@
 				        <v-text-field label="Event Name" v-model="eventName"></v-text-field>
 
                         <Datepicker :datePickerLabel="'Start Date'" v-model="startDate" @valueChanged="startDate=$event"/>
-                        <Datepicker :datePickerLabel="'Start Date'" v-model="endDate" @valueChanged="endDate=$event"/>
+                        <Datepicker :datePickerLabel="'End Date'" v-model="endDate" @valueChanged="endDate=$event"/>
                         
                         <br>
 
