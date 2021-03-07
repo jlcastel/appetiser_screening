@@ -27,7 +27,8 @@ Repository for Appetiser App's Screening
 
 
 ## Laravel Endpoint(s)
-- post: api/events/add - Adds an event to the database. If successful, returns the data of the stored event
+- `POST: api/events/add` - Adds an event to the database. If successful, returns the data of the stored event.
+- `GET:  api/events` - Returns all events on the database.
 
 ## MySql Database
 	
