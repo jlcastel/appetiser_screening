@@ -15,11 +15,11 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie', 'localhost', 'ancient-plateau-26754.herokuapp.com', 'herokuapp.com'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie', 'localhost'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*', 'herokuapp.com', 'ancient-plateau-26754.herokuapp.com'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 

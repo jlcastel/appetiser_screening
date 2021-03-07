@@ -9,6 +9,7 @@
     </div>
 </template>
 
+
 <script>
     export default {
         data() {
@@ -22,6 +23,8 @@
             value : String,
         },
         methods: {
+            // Emits a value based on the user input
+            // Allows 2-way binding
             changeValue(val) {
                 this.menu = false;
                 this.$emit('valueChanged', val);

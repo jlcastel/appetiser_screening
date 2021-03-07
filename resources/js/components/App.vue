@@ -32,11 +32,9 @@
                         <br>
                         
                         <v-row v-if="!loading">
-                            
                             <v-btn v-on:click="addEvent"  class="ma-2" depressed color="primary">Save</v-btn>
                             <v-btn v-on:click="resetFields"  class="ma-2" outlined color="red">Reset Fields</v-btn>
                             <v-btn v-on:click="logValues"  class="ma-2" outlined color="black">Log Values</v-btn>
-                            
                         </v-row>
 
                         <br> <br>
@@ -69,20 +67,13 @@
 
     // Header Component Imports
     import headerBar from './Header';
-
     // Calendar Component Imports
     import calendarWidget from './Calendar';
-    
     // From Component Imports
     import datePicker from './form/Datepicker';
     import loadingBar from './form/LoadingBar';
-    import solidButton from './form/SolidButton';
-    import outlinedButton from './form/OutlinedButton';
     import alertMessage from './form/Alert';
 
-    // HTTP Plugin
-    // import axios from 'axios';
-    // Vue.use(VueAxios, axios);
 
     export default {
         name: 'App',
@@ -154,7 +145,6 @@
 					}
 					
 					try {
-
 						
 						this.loading = true;
 
@@ -176,7 +166,6 @@
 						this.recentlyAddedEvent = null;
 						console.log(e);
 					}
-				
 				
 				this.loading = false;
 				
@@ -200,7 +189,7 @@
 			},
             // DEBUG FUNCTION - helper function
             // displays the value of the input fields
-			logValues: function () {
+			logValues() {
                 console.log('');
                 console.log('');
                 console.log(`eventName: ${this.eventName}`);
@@ -220,7 +209,7 @@
             },
             // checks the form for errors
             // returns true if has errors, else return false
-			hasFormErrors ()  {
+			hasFormErrors()  {
 				
 				var hasErrors = false;
 
@@ -247,14 +236,14 @@
 
 				return hasErrors;
             },
-            // receives - a date of type string with format YYYY-MM-DD
+            // receives - a date of type string with format 'YYYY-MM-DD'
             // returns - its equivalent Date type
             getDateFormat: function (date) {
             var splitDate = date.split('-');
             var newDate = new Date(parseInt(splitDate[0]), parseInt(splitDate[1])-1, parseInt(splitDate[2]), 0, 0, 0, 0, ); 
             return newDate;
             },
-            // desc - helper function for form checking
+            // description - helper function for form checking
             // receives - 2 values of type String - Date dormat YYYY-MM-DD
             // returns - true if date1 is before date2, otherwise, returns false
             isBefore: function (date1, date2)  {
