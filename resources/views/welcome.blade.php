@@ -18,7 +18,6 @@
   <body>
 
 	<div id="app">
-		changed
 		<App/>
 	</div>
 
