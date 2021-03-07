@@ -1,10 +1,8 @@
-SWITCH THE CDN TO PRODUCTION
-ADD LOADING TO ADDING STUFF
-
 Features
 	- Calendar App - Single Page Application
-	- Store Events Created on MySql Database using Laravel
+	- Store Events Created on MySql Database using Laravel API
 	- View Recently Added Event Immediately
+	- Reset Form Input
 
 Limitations
 	- Non-Reuse of Vue Components in different Vue files
@@ -17,14 +15,13 @@ Error Handling
 	- HTTTP Request Error
 
 Used Plugins
-	- Vuetify JS CDN
-	- Vuetify CSS CDN
-	- Vue CDN
-	- Axios CDN
+	- Vue
+	- Vuetify
+	- Axios
 
 
 Laravel Endpoint(s)
 	- post: api/events/add - Adds an event to the database. If successful, returns the data of the stored event
 
-MySql
+MySql Database
 	

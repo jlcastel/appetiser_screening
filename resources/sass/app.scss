@@ -1,8 +1,10 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css');
 
-// Variables
-@import 'variables';
+html body {
+    margin-left: 20;
+    margin-right: 20;
+}
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css'~bootstrap/scss/bootstrap';
