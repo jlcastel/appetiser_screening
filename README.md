@@ -10,10 +10,9 @@ Repository for Appetiser App's Screening
 - Reset Form Input
 
 ## Limitations
-- Non-Reuse of Vue Components in different Vue files
-- Non-Responsive CSS
-- Logic and View in one file
+- No Authentication - Anyone with the link can insert an event
 - Vue still on Production mode
+- Non-Responsive CSS
 
 ## Error Handling
 - Empty Form Inputs
