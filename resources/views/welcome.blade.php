@@ -18,7 +18,7 @@
   <body>
 
 	<div id="app">
-		wqerqwerewreqwre
+		changed
 		<App/>
 	</div>
 
