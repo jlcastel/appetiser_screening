@@ -7,35 +7,38 @@
             <div>
                 <v-row>
                     <v-col>
-                        
-				        <v-text-field label="Event Name" v-model="eventName"></v-text-field>
 
-                        <Datepicker :datePickerLabel="'Start Date'" v-model="startDate" @valueChanged="startDate=$event"/>
-                        <Datepicker :datePickerLabel="'End Date'" v-model="endDate" @valueChanged="endDate=$event"/>
-                        
-                        <br>
+                        <form id="add-event-form" @submit.prevent="addEvent">
 
-                        <v-row>
-                            <div> <input type="checkbox" id="checkbox" v-model="monday">    Mon &nbsp; &nbsp; </div>
-                            <div> <input type="checkbox" id="checkbox" v-model="tuesday">   Tue &nbsp; &nbsp; </div> 
-                            <div> <input type="checkbox" id="checkbox" v-model="wednesday"> Wed &nbsp; &nbsp; </div> 
-                            <div> <input type="checkbox" id="checkbox" v-model="thursday">  Thu &nbsp; &nbsp; </div> 
-                            <div> <input type="checkbox" id="checkbox" v-model="friday">    Fri &nbsp; &nbsp; </div> 
-                            <div> <input type="checkbox" id="checkbox" v-model="saturday">  Sat &nbsp; &nbsp; </div> 
-                            <div> <input type="checkbox" id="checkbox" v-model="sunday">    Sun </div>
-                        </v-row>
+                            <v-text-field label="Event Name" v-model="eventName"></v-text-field>
 
-                        <br>
+                            <Datepicker :datePickerLabel="'Start Date'" v-model="startDate" @valueChanged="startDate=$event"/>
+                            <Datepicker :datePickerLabel="'End Date'" v-model="endDate" @valueChanged="endDate=$event"/>
+                            
+                            <br>
 
-                        <Loading-Bar v-if="loading"/>
+                            <v-row>
+                                <div> <input type="checkbox" id="checkbox" v-model="monday">    Mon &nbsp; &nbsp; </div>
+                                <div> <input type="checkbox" id="checkbox" v-model="tuesday">   Tue &nbsp; &nbsp; </div> 
+                                <div> <input type="checkbox" id="checkbox" v-model="wednesday"> Wed &nbsp; &nbsp; </div> 
+                                <div> <input type="checkbox" id="checkbox" v-model="thursday">  Thu &nbsp; &nbsp; </div> 
+                                <div> <input type="checkbox" id="checkbox" v-model="friday">    Fri &nbsp; &nbsp; </div> 
+                                <div> <input type="checkbox" id="checkbox" v-model="saturday">  Sat &nbsp; &nbsp; </div> 
+                                <div> <input type="checkbox" id="checkbox" v-model="sunday">    Sun </div>
+                            </v-row>
 
-                        <br>
-                        
-                        <v-row v-if="!loading">
-                            <v-btn v-on:click="addEvent"  class="ma-2" depressed color="primary">Save</v-btn>
-                            <v-btn v-on:click="resetFields"  class="ma-2" outlined color="red">Reset Fields</v-btn>
-                            <v-btn v-on:click="logValues"  class="ma-2" outlined color="black">Log Values</v-btn>
-                        </v-row>
+                            <br>
+
+                            <Loading-Bar v-if="loading"/>
+
+                            <br>
+                            
+                            <v-row v-if="!loading">
+                                <v-btn type="submit" class="ma-2" depressed color="primary">Save</v-btn>
+                                <v-btn v-on:click="resetFields"  class="ma-2" outlined color="red">Reset Fields</v-btn>
+                                <v-btn v-on:click="logValues"  class="ma-2" outlined color="black">Log Values</v-btn>
+                            </v-row>
+                        </form>
 
                         <br> <br>
                         
@@ -85,8 +88,6 @@
             // Form Components
             'Datepicker': datePicker,
             'Loading-Bar': loadingBar,
-            'Solid-Button': solidButton,
-            'Outlined-Button': outlinedButton,
             'AlertMessage': alertMessage,
         },
         data() {
@@ -114,7 +115,7 @@
                 recentlyAddedEvent: null,
                 // Calendar Widget values
 			    currentDate: new Date(),
-                // Constants
+                // Constants - transfer to config file??
                 eventSaveSuccessMessage: "Event saved successfuly.",
                 eventNameErrorMessage: "Event Name required.",
                 endDateErrorMessage: "End Date required.",
