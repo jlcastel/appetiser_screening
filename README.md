@@ -13,6 +13,7 @@ Repository for Appetiser App's Screening
 - No Authentication - Anyone with the link can insert an event
 - Vue still on Production mode
 - Non-Responsive CSS
+- MySql no accepting whitespace only - app prompts user w/ server error
 
 ## Error Handling
 - Empty Form Inputs
