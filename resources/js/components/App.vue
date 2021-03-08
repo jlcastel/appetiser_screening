@@ -159,6 +159,9 @@
 							this.recentlyAddedEvent = response.data;
 						});
 
+                        
+						this.serverError=false;
+
 						this.successfulSave = true;
 						setTimeout(() => this.successfulSave = false, 3000);
 
@@ -175,6 +178,7 @@
             // resets the values of the input fields to blank
             // resets the recentlyAddedEvent to be null
             resetFields() {
+                // reset fields
                 console.log('resetFields');
                 this.eventName = "";
                 this.startDate = "";
@@ -186,6 +190,14 @@
                 this.thursday = false;
                 this.friday = false;
                 this.saturday = false;
+                // clear errors
+                this.eventNameEmpty = false;
+                this.startDateEmpty = false;
+                this.endDateEmpty = false;
+                this.successfulSave = false;
+                this.serverError = false;
+                this.dateError = false;
+                // reset calendar ??
                 this.recentlyAddedEvent = null;
 			},
             // DEBUG FUNCTION - helper function
@@ -214,21 +226,25 @@
 				
 				var hasErrors = false;
 
+                // event name
 				if(this.eventName=='') {
 					hasErrors=true;
 					this.eventNameEmpty=true;
 				} else this.eventNameEmpty=false;
 
+                // datepicker - start date
 				if(this.startDate=='') {
 					hasErrors=true;
 					this.startDateEmpty=true;
 				} else this.startDateEmpty=false;
 
+                // datepicker - start date
 				if(this.endDate=='') {
 					hasErrors=true;
 					this.endDateEmpty=true;
 				} else this.endDateEmpty=false;
 
+                // datepicker - start date
 				if(this.endDate!='' && this.startDate!='')
 					if(this.isBefore(this.startDate,this.endDate)) {
 						hasErrors=true;
