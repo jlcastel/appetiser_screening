@@ -129,8 +129,11 @@
             // calls the laravel api to send POST request to the laravel API
             // uses the form field values as request data 
             async addEvent()  {
+                
 
-				if(!this.hasFormErrors()) {
+                // comment out either of the if statements to test different validation
+				if(!this.hasFormErrors()) { // front-end form validation
+				// if(true) { // back-end validation
 
 					var data = {
 						name: this.eventName,
@@ -171,7 +174,7 @@
 						console.log(e);
 					}
 				
-				this.loading = false;
+				    this.loading = false;
 				
 				}
             },
